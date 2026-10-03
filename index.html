@@ -3,10 +3,1103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ČOV bez starostí</title>
+
+  <title>ČOV bez starostí | Servis a pravidelné kontroly domovních ČOV</title>
+
+  <meta name="description" content="Pravidelné kontroly, diagnostika a servis domovních čistíren odpadních vod. Praha-západ a okolí. 15 let odborné praxe, zkušenosti z ČR i zahraničí. Služby také v angličtině.">
+
+  <style>
+    :root {
+      --bg: #f3f5f4;
+      --paper: #ffffff;
+      --dark: #172329;
+      --dark-2: #203138;
+      --steel: #52656d;
+      --line: #d8dfdc;
+      --accent: #4d756c;
+      --accent-dark: #35574f;
+      --soft: #e7ece9;
+      --text: #1f292d;
+      --muted: #66747a;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(243, 245, 244, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border: 2px solid var(--dark);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .brand-mark::before {
+      transform: rotate(45deg);
+    }
+
+    .brand-mark::after {
+      transform: rotate(-45deg);
+    }
+
+    .brand-title {
+      font-size: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-dark);
+    }
+
+    .nav-cta {
+      background: var(--dark);
+      color: white;
+      padding: 11px 17px;
+      border-radius: 6px;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        linear-gradient(rgba(23,35,41,0.96), rgba(23,35,41,0.94)),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 79px,
+          rgba(255,255,255,0.03) 80px
+        );
+      color: white;
+      padding: 94px 0 78px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.8rem;
+      color: #b9c9c4;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 7vw, 5.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      max-width: 800px;
+    }
+
+    .hero-sub {
+      margin-top: 26px;
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+      color: #dce5e2;
+      max-width: 760px;
+      line-height: 1.35;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #5f887f;
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,0.35);
+      color: white;
+    }
+
+    .hero-panel {
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 26px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 10px;
+    }
+
+    .hero-panel strong {
+      display: block;
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-panel p {
+      margin: 0;
+      color: #cbd6d2;
+    }
+
+    .metric-grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .metric {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 18px;
+      border-radius: 7px;
+    }
+
+    .metric span {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: white;
+    }
+
+    .metric small {
+      color: #b8c4c0;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 86px 0;
+    }
+
+    .section-kicker {
+      color: var(--accent-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin: 0 0 18px;
+    }
+
+    .lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    /* SERVICES */
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 30px;
+      border-radius: 10px;
+      min-height: 310px;
+      position: relative;
+    }
+
+    .service-number {
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      margin-bottom: 35px;
+    }
+
+    .service-card h3 {
+      margin: 0 0 13px;
+      font-size: 1.45rem;
+    }
+
+    .service-card p {
+      color: var(--muted);
+    }
+
+    .service-card strong.price {
+      display: block;
+      margin-top: 24px;
+      font-size: 1.35rem;
+      color: var(--dark);
+    }
+
+    /* CHECKLIST */
+
+    .check-section {
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .check-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 26px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .check-icon {
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      background: var(--soft);
+      color: var(--accent-dark);
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      font-weight: 900;
+      font-size: 0.8rem;
+    }
+
+    /* MODEL */
+
+    .model {
+      background: var(--dark);
+      color: white;
+    }
+
+    .model .lead {
+      color: #bac6c2;
+    }
+
+    .model-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .model-step {
+      background: var(--dark-2);
+      padding: 28px;
+      min-height: 220px;
+    }
+
+    .model-step span {
+      color: #91aaa2;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .model-step h3 {
+      margin: 24px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .model-step p {
+      margin: 0;
+      color: #c8d1ce;
+    }
+
+    /* EXPERIENCE */
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .experience-main,
+    .experience-box {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 34px;
+    }
+
+    .experience-main {
+      grid-row: span 2;
+    }
+
+    .experience-main .big-number {
+      font-size: 5rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--accent);
+      letter-spacing: -0.06em;
+      margin-bottom: 12px;
+    }
+
+    .experience-box h3 {
+      margin-top: 0;
+    }
+
+    /* PRICE */
+
+    .pricing {
+      background: #e9eeec;
+    }
+
+    .pricing-table {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .price-row {
+      display: grid;
+      grid-template-columns: 1.8fr 0.7fr;
+      gap: 20px;
+      padding: 22px 26px;
+      border-bottom: 1px solid var(--line);
+      align-items: center;
+    }
+
+    .price-row:last-child {
+      border-bottom: 0;
+    }
+
+    .price-row strong {
+      font-size: 1.12rem;
+    }
+
+    .price-value {
+      text-align: right;
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .price-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 4px;
+    }
+
+    .transport {
+      margin-top: 20px;
+      padding: 22px 26px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+    }
+
+    /* ENGLISH */
+
+    .english {
+      background: var(--paper);
+    }
+
+    .english-box {
+      border-left: 5px solid var(--accent);
+      padding: 30px 34px;
+      background: var(--soft);
+      border-radius: 0 10px 10px 0;
+    }
+
+    .english-box h3 {
+      margin-top: 0;
+      font-size: 1.7rem;
+    }
+
+    /* PROJECTS */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .project {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      padding: 28px;
+      border-radius: 10px;
+    }
+
+    .project small {
+      color: var(--accent-dark);
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+    }
+
+    .project h3 {
+      margin: 16px 0 10px;
+    }
+
+    .project p {
+      color: var(--muted);
+    }
+
+    /* CTA */
+
+    .cta {
+      background: var(--accent-dark);
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      max-width: 800px;
+      margin: 0 auto 18px;
+    }
+
+    .cta p {
+      color: #d4dedb;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .cta .btn-primary {
+      background: white;
+      color: var(--dark);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #111b1f;
+      color: #b8c5c1;
+      padding: 42px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .check-grid,
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .model-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .check-list {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .price-row {
+        grid-template-columns: 1fr;
+      }
+
+      .price-value {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 26px, 1160px);
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+
+      .model-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>ČOV bez starostí</h1>
-  <p>Vaši ČOV hlídáme my. Vy ji nemusíte řešit.</p>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#">
+      <span class="brand-mark"></span>
+      <span class="brand-title">ČOV BEZ STAROSTÍ</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#sluzby">Služby</a>
+      <a href="#pece">Pravidelná péče</a>
+      <a href="#zkusenosti">Zkušenosti</a>
+      <a href="#cenik">Ceník</a>
+      <a href="#english">English</a>
+      <a class="nav-cta" href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div>
+      <div class="eyebrow">Servis domovních čistíren odpadních vod</div>
+
+      <h1>ČOV bez starostí.</h1>
+
+      <div class="hero-sub">
+        Vaši ČOV hlídáme my. Vy ji nemusíte řešit.
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#kontakt">Objednat kontrolu</a>
+        <a class="btn btn-outline" href="#sluzby">Co kontrolujeme</a>
+      </div>
+    </div>
+
+    <div class="hero-panel">
+      <strong>Pravidelná péče místo řešení problémů na poslední chvíli.</strong>
+
+      <p>
+        Kontrola provozu, diagnostika závad, seřízení technologie
+        a servis domovních ČOV v oblasti Praha-západ a okolí.
+      </p>
+
+      <div class="metric-grid">
+        <div class="metric">
+          <span>15+</span>
+          <small>let odborné praxe</small>
+        </div>
+
+        <div class="metric">
+          <span>ČR + zahraničí</span>
+          <small>profesní zkušenosti</small>
+        </div>
+
+        <div class="metric">
+          <span>CZ / EN</span>
+          <small>komunikace se zákazníkem</small>
+        </div>
+
+        <div class="metric">
+          <span>1 900 Kč</span>
+          <small>pravidelná kontrola</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="sluzby">
+  <div class="container">
+
+    <div class="section-kicker">Služby</div>
+    <h2>Nečekejte, až začne ČOV zapáchat nebo přestane čistit.</h2>
+
+    <p class="lead">
+      Domovní čistírna je technologie, která potřebuje správné podmínky,
+      nastavení a občasnou kontrolu. Naším cílem není prodávat hodiny technika,
+      ale udržet vaši ČOV ve správném provozu.
+    </p>
+
+    <div class="service-grid">
+
+      <article class="service-card">
+        <div class="service-number">01 / PRAVIDELNÁ PÉČE</div>
+        <h3>Kontrola a nastavení ČOV</h3>
+        <p>
+          Preventivní kontrola provozu, kalu, provzdušnění, dmychadla,
+          mamutek, čerpadel a základního nastavení technologie.
+        </p>
+        <strong class="price">1 900 Kč + doprava</strong>
+      </article>
+
+      <article class="service-card">
+        <div class="service-number">02 / DIAGNOSTIKA</div>
+        <h3>ČOV nefunguje, zapáchá nebo špatně čistí?</h3>
+        <p>
+          Najdeme příčinu problému a pokud je to možné,
+          odstraníme ji rovnou při návštěvě.
+        </p>
+        <strong class="price">1 200 Kč / hod.</strong>
+      </article>
+
+      <article class="service-card">
+        <div class="service-number">03 / VSTUPNÍ KONTROLA</div>
+        <h3>První kontrola vaší ČOV</h3>
+        <p>
+          Zjistíme výrobce, typ, stav technologie a způsob provozu.
+          Doporučíme další servisní interval a ČOV můžeme zařadit
+          do systému pravidelné péče.
+        </p>
+        <strong class="price">1 900 Kč + doprava</strong>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="check-section">
+  <div class="container check-grid">
+
+    <div>
+      <div class="section-kicker">Co při kontrole řešíme</div>
+      <h2>Technologie má fungovat jako celek.</h2>
+
+      <p class="lead">
+        Nejde jen o to „podívat se do nádrže“. Kontrolujeme jednotlivé části
+        i to, jak spolu celý systém pracuje.
+      </p>
+    </div>
+
+    <div class="check-list">
+
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span>stav a množství aktivovaného kalu</span>
+      </div>
+
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span>chod a stav dmychadla</span>
+      </div>
+
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span>provzdušnění nádrže</span>
+      </div>
+
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span>funkci mamutek a rozvodů vzduchu</span>
+      </div>
+
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span>čerpadla a další technologické prvky</span>
+      </div>
+
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span>základní nastavení provozu</span>
+      </div>
+
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span>vizuální stav odtoku z ČOV</span>
+      </div>
+
+      <div class="check-item">
+        <span class="check-icon">✓</span>
+        <span>doporučení dalšího postupu</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="model" id="pece">
+  <div class="container">
+
+    <div class="section-kicker">ČOV bez starostí</div>
+    <h2>Pravidelný servis místo nahodilých oprav.</h2>
+
+    <p class="lead">
+      Směřujeme k systému pravidelné péče podobnému servisním modelům,
+      které jsou běžné u technických zařízení v zahraničí:
+      zařízení evidujeme, kontrolujeme a termín další návštěvy hlídáme za vás.
+    </p>
+
+    <div class="model-grid">
+
+      <div class="model-step">
+        <span>01</span>
+        <h3>Vstupní kontrola</h3>
+        <p>
+          Poznáme vaši ČOV, její stav, výrobce, typ a aktuální nastavení.
+        </p>
+      </div>
+
+      <div class="model-step">
+        <span>02</span>
+        <h3>Evidence zařízení</h3>
+        <p>
+          Zapíšeme základní servisní informace a doporučený interval kontroly.
+        </p>
+      </div>
+
+      <div class="model-step">
+        <span>03</span>
+        <h3>Termín hlídáme my</h3>
+        <p>
+          Nemusíte si pamatovat, kdy byla poslední kontrola.
+          Včas se vám ozveme.
+        </p>
+      </div>
+
+      <div class="model-step">
+        <span>04</span>
+        <h3>Servis podle potřeby</h3>
+        <p>
+          Pokud se objeví problém, víme, jakou technologii máte
+          a co se na ní dříve řešilo.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section id="zkusenosti">
+  <div class="container">
+
+    <div class="section-kicker">Technické zkušenosti</div>
+    <h2>15 let práce s technologiemi odpadních vod.</h2>
+
+    <p class="lead">
+      Servis domácí ČOV nestavíme na krátkém kurzu, ale na dlouholeté
+      profesionální zkušenosti s technickými zařízeními, diagnostikou
+      a technologiemi odpadních vod.
+    </p>
+
+    <div class="experience-grid">
+
+      <div class="experience-main">
+        <div class="big-number">15+</div>
+        <h3>let odborné servisní praxe</h3>
+
+        <p>
+          Petr dlouhodobě pracuje jako servisní technik v oblasti
+          technologií spojených s čištěním a nakládáním s odpadními vodami.
+        </p>
+
+        <p>
+          V praxi se věnuje diagnostice závad, servisu, opravám,
+          uvádění technologií do provozu a práci s čerpadly,
+          armaturami, elektrickými a řídicími prvky.
+        </p>
+      </div>
+
+      <div class="experience-box">
+        <h3>Zkušenosti i ze zahraničí</h3>
+        <p>
+          Součástí profesní praxe jsou také projekty a servis technologií
+          mimo Českou republiku.
+        </p>
+      </div>
+
+      <div class="experience-box">
+        <h3>Technická angličtina</h3>
+        <p>
+          Celý servis, vysvětlení problému i následnou komunikaci
+          je možné řešit také v angličtině.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="section-kicker">Vybrané zkušenosti z profesní praxe</div>
+    <h2>Od běžných provozů po mimořádně náročné projekty.</h2>
+
+    <p class="lead">
+      Níže uvedené příklady představují profesní zkušenosti technika
+      získané v rámci jeho dosavadního zaměstnání a spolupráce na projektech,
+      nikoli reference společnosti ČOV bez starostí.
+    </p>
+
+    <div class="project-grid">
+
+      <div class="project">
+        <small>Zahraničí</small>
+        <h3>ČOV pro resort na Zanzibaru</h3>
+        <p>
+          Účast na realizaci a technickém řešení technologie čištění
+          odpadních vod v zahraničním resortním provozu.
+        </p>
+      </div>
+
+      <div class="project">
+        <small>Marine technologie</small>
+        <h3>Technologie pro luxusní superjachty</h3>
+        <p>
+          Servisní zkušenosti s technologiemi odpadních vod
+          na vysoce technicky náročných plavidlech.
+        </p>
+      </div>
+
+      <div class="project">
+        <small>Servis a commissioning</small>
+        <h3>Diagnostika a uvádění zařízení do provozu</h3>
+        <p>
+          Praktická práce s čerpadly, armaturami, řízením a dalšími
+          prvky vodohospodářských technologických celků.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="pricing" id="cenik">
+  <div class="container">
+
+    <div class="section-kicker">Ceník</div>
+    <h2>Jasná cena předem.</h2>
+
+    <p class="lead">
+      U pravidelné kontroly platíte za kompletní službu, ne za počet minut,
+      které technik u zařízení stráví.
+    </p>
+
+    <div class="pricing-table">
+
+      <div class="price-row">
+        <div>
+          <strong>Pravidelná kontrola a nastavení ČOV</strong>
+          <div class="price-note">
+            Zahrnuje základní kontrolu technologie a běžné drobné seřízení.
+          </div>
+        </div>
+        <div class="price-value">1 900 Kč</div>
+      </div>
+
+      <div class="price-row">
+        <div>
+          <strong>Vstupní kontrola ČOV</strong>
+          <div class="price-note">
+            Kompletní první prohlídka zařízení a doporučení další péče.
+          </div>
+        </div>
+        <div class="price-value">1 900 Kč</div>
+      </div>
+
+      <div class="price-row">
+        <div>
+          <strong>Diagnostika a servis závady</strong>
+          <div class="price-note">
+            Při zápachu, špatném čištění, nefunkčním dmychadle,
+            čerpadle nebo jiném provozním problému.
+          </div>
+        </div>
+        <div class="price-value">1 200 Kč / hod.</div>
+      </div>
+
+      <div class="price-row">
+        <div>
+          <strong>Minimální cena servisního výjezdu</strong>
+        </div>
+        <div class="price-value">1 500 Kč</div>
+      </div>
+
+    </div>
+
+    <div class="transport">
+      <strong>Doprava z Hvozdnice:</strong><br>
+      do 15 km – 300 Kč &nbsp; • &nbsp;
+      do 30 km – 500 Kč &nbsp; • &nbsp;
+      do 45 km – 700 Kč &nbsp; • &nbsp;
+      do 60 km – 900 Kč<br>
+      <span class="price-note">Nad 60 km individuálně. Materiál a náhradní díly se účtují zvlášť.</span>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="english" id="english">
+  <div class="container">
+
+    <div class="english-box">
+      <div class="section-kicker">English-speaking service</div>
+
+      <h3>Domestic wastewater treatment plant service in English.</h3>
+
+      <p>
+        We also provide servicing, troubleshooting and regular maintenance
+        of domestic wastewater treatment plants for English-speaking clients
+        living in Prague-West and Central Bohemia.
+      </p>
+
+      <p>
+        Technical explanation, service visit and follow-up communication
+        can all be handled in English.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="cta" id="kontakt">
+  <div class="container">
+
+    <h2>Chcete vědět, jestli vaše ČOV funguje tak, jak má?</h2>
+
+    <p>
+      Domluvte si vstupní nebo pravidelnou kontrolu.
+      Pokud už ČOV zapáchá, špatně čistí nebo nefunguje,
+      popište nám problém a domluvíme servis.
+    </p>
+
+    <a class="btn btn-primary" href="tel:+420000000000">
+      Zavolat Petrovi
+    </a>
+
+    <br><br>
+
+    <strong>Praha-západ a okolí</strong><br>
+    tel. +420 730 175 315<br>
+    e-mail: info@covbezstarosti.cz
+
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+  <div class="container footer-grid">
+
+    <div>
+      <strong>ČOV BEZ STAROSTÍ</strong><br>
+      Servis, diagnostika a pravidelné kontroly domovních ČOV.
+    </div>
+
+    <div>
+      © 2026 ČOV bez starostí
+    </div>
+
+  </div>
+</footer>
+
 </body>
 </html>
