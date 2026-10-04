@@ -6,7 +6,10 @@
 
   <title>ČOV bez starostí | Servis a pravidelné kontroly domovních ČOV</title>
 
-  <meta name="description" content="Pravidelné kontroly, diagnostika a servis domovních čistíren odpadních vod. Praha-západ a okolí. 15 let odborné praxe, zkušenosti z ČR i zahraničí. Služby také v angličtině.">
+  <meta
+    name="description"
+    content="Pravidelné kontroly, diagnostika a servis domovních čistíren odpadních vod. Praha-západ a okolí. 15 let odborné praxe, zkušenosti z ČR i zahraničí. Služby také v angličtině."
+  >
 
   <style>
     :root {
@@ -258,7 +261,7 @@
       color: var(--muted);
     }
 
-    /* GENERAL SECTIONS */
+    /* GENERAL */
 
     section {
       padding: 86px 0;
@@ -418,16 +421,16 @@
       color: var(--muted);
     }
 
-    /* EXPERIENCE */
+    /* TEAM / EXPERIENCE */
 
-    .experience-grid {
+    .team-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 24px;
+      margin-bottom: 24px;
     }
 
-    .experience-main,
-    .experience-box {
+    .team-card {
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: 12px;
@@ -435,21 +438,53 @@
       box-shadow: var(--shadow);
     }
 
-    .experience-main {
-      grid-row: span 2;
+    .role {
+      display: inline-block;
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 800;
+      margin-bottom: 12px;
     }
 
-    .experience-main .big-number {
-      font-size: 5rem;
+    .team-card h3 {
+      margin: 0 0 6px;
+      color: var(--dark);
+      font-size: 1.65rem;
+    }
+
+    .team-card h4 {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .big-number {
+      font-size: 4.8rem;
       font-weight: 900;
       line-height: 1;
       color: var(--accent-dark);
       letter-spacing: -0.06em;
-      margin-bottom: 12px;
+      margin: 12px 0;
     }
 
-    .experience-box h3,
-    .experience-main h3 {
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .experience-box {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .experience-box h3 {
       margin-top: 0;
       color: var(--dark);
     }
@@ -561,30 +596,78 @@
       color: var(--dark);
     }
 
-    /* CTA */
+    /* CONTACT */
 
-    .cta {
+    .contact-section {
       background:
         linear-gradient(135deg, #315F5A 0%, #3F7771 100%);
       color: white;
-      text-align: center;
     }
 
-    .cta h2 {
-      max-width: 800px;
-      margin: 0 auto 18px;
+    .contact-section h2 {
       color: white;
     }
 
-    .cta p {
+    .contact-intro {
       color: #DCEAE7;
-      max-width: 700px;
-      margin: 0 auto 30px;
+      max-width: 760px;
+      font-size: 1.12rem;
+      margin-bottom: 38px;
     }
 
-    .cta .btn-primary {
-      background: white;
-      color: var(--dark);
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.22);
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .contact-card h3 {
+      margin-top: 0;
+      font-size: 1.45rem;
+    }
+
+    .contact-card p {
+      color: #E4EFEC;
+    }
+
+    .contact-label {
+      color: #C2D8D3;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 800;
+      margin-top: 22px;
+    }
+
+    .contact-value {
+      display: block;
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-top: 3px;
+      color: white;
+    }
+
+    .contact-note {
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      color: #DCEAE7;
+      font-size: 0.95rem;
+    }
+
+    .contact-tech {
+      background: rgba(22,47,51,0.45);
+    }
+
+    .contact-tech strong {
+      color: white;
     }
 
     /* FOOTER */
@@ -611,12 +694,17 @@
     @media (max-width: 900px) {
       .hero-grid,
       .check-grid,
-      .experience-grid {
+      .team-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
       .service-grid,
       .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-grid {
         grid-template-columns: 1fr;
       }
 
@@ -696,7 +784,7 @@
       </div>
 
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#kontakt">Objednat kontrolu</a>
+        <a class="btn btn-primary" href="#kontakt">Domluvit kontrolu</a>
         <a class="btn btn-outline" href="#sluzby">Co kontrolujeme</a>
       </div>
     </div>
@@ -744,7 +832,7 @@
 
     <p class="lead">
       Domovní čistírna je technologie, která potřebuje správné podmínky,
-      nastavení a občasnou kontrolu. Naším cílem není prodávat hodiny technika,
+      nastavení a pravidelnou kontrolu. Naším cílem není prodávat hodiny technika,
       ale udržet vaši ČOV ve správném provozu.
     </p>
 
@@ -764,8 +852,8 @@
         <div class="service-number">02 / DIAGNOSTIKA</div>
         <h3>ČOV nefunguje, zapáchá nebo špatně čistí?</h3>
         <p>
-          Najdeme příčinu problému a pokud je to možné,
-          odstraníme ji rovnou při návštěvě.
+          Technik na místě zjistí příčinu problému a pokud je to možné,
+          odstraní ji rovnou při návštěvě.
         </p>
         <strong class="price">1 200 Kč / hod.</strong>
       </article>
@@ -855,8 +943,7 @@
     <h2>Pravidelný servis místo nahodilých oprav.</h2>
 
     <p class="lead">
-      Směřujeme k systému pravidelné péče podobnému servisním modelům,
-      které jsou běžné u technických zařízení v zahraničí:
+      Směřujeme k systému pravidelné péče:
       zařízení evidujeme, kontrolujeme a termín další návštěvy hlídáme za vás.
     </p>
 
@@ -891,8 +978,8 @@
         <span>04</span>
         <h3>Servis podle potřeby</h3>
         <p>
-          Pokud se objeví problém, víme, jakou technologii máte
-          a co se na ní dříve řešilo.
+          Pokud se objeví problém, máme přehled o zařízení
+          a jeho předchozím servisu.
         </p>
       </div>
 
@@ -904,39 +991,64 @@
 <section id="zkusenosti">
   <div class="container">
 
-    <div class="section-kicker">Technické zkušenosti</div>
+    <div class="section-kicker">Kdo se o vaši ČOV stará</div>
 
-    <h2>15 let práce s technologiemi odpadních vod.</h2>
+    <h2>Odborný servis a organizovaná péče.</h2>
 
     <p class="lead">
-      Servis domácí ČOV nestavíme na krátkém kurzu, ale na dlouholeté
-      profesionální zkušenosti s technickými zařízeními, diagnostikou
-      a technologiemi odpadních vod.
+      Technickou práci zajišťuje zkušený servisní technik.
+      Objednávky, komunikaci se zákazníky a organizaci výjezdů řešíme samostatně,
+      aby se technik mohl soustředit na samotný servis.
     </p>
 
-    <div class="experience-grid">
+    <div class="team-grid">
 
-      <div class="experience-main">
+      <div class="team-card">
+        <span class="role">Servisní technik</span>
+
+        <h3>Petr [PŘÍJMENÍ]</h3>
+        <h4>diagnostika, servis a technologie odpadních vod</h4>
+
         <div class="big-number">15+</div>
 
-        <h3>let odborné servisní praxe</h3>
-
         <p>
-          Petr dlouhodobě pracuje jako servisní technik v oblasti
-          technologií spojených s čištěním a nakládáním s odpadními vodami.
+          let odborné servisní praxe v oblasti technologií spojených
+          s čištěním a nakládáním s odpadními vodami.
         </p>
 
         <p>
           V praxi se věnuje diagnostice závad, servisu, opravám,
-          uvádění technologií do provozu a práci s čerpadly,
+          uvádění technologických zařízení do provozu a práci s čerpadly,
           armaturami, elektrickými a řídicími prvky.
         </p>
       </div>
 
+      <div class="team-card">
+        <span class="role">Objednávky a servisní koordinace</span>
+
+        <h3>Pavla [PŘÍJMENÍ]</h3>
+        <h4>komunikace se zákazníky a organizace výjezdů</h4>
+
+        <p>
+          Při prvním kontaktu s vámi zjistím základní informace
+          o vaší ČOV a problému, domluvím servisní termín a případně
+          si vyžádám fotografie nebo označení zařízení.
+        </p>
+
+        <p>
+          Díky tomu může technik přijet na místo připravený
+          a věnovat čas přímo diagnostice a řešení problému.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="experience-grid">
+
       <div class="experience-box">
         <h3>Zkušenosti i ze zahraničí</h3>
         <p>
-          Součástí profesní praxe jsou také projekty a servis technologií
+          Součástí Petrovy profesní praxe jsou také projekty a servis technologií
           mimo Českou republiku.
         </p>
       </div>
@@ -944,7 +1056,7 @@
       <div class="experience-box">
         <h3>Technická angličtina</h3>
         <p>
-          Celý servis, vysvětlení problému i následnou komunikaci
+          Servis, vysvětlení problému i následnou komunikaci
           je možné řešit také v angličtině.
         </p>
       </div>
@@ -971,7 +1083,9 @@
 
       <div class="project">
         <small>Zahraničí</small>
+
         <h3>ČOV pro resort na Zanzibaru</h3>
+
         <p>
           Účast na realizaci a technickém řešení technologie čištění
           odpadních vod v zahraničním resortním provozu.
@@ -980,7 +1094,9 @@
 
       <div class="project">
         <small>Marine technologie</small>
+
         <h3>Technologie pro luxusní superjachty</h3>
+
         <p>
           Servisní zkušenosti s technologiemi odpadních vod
           na vysoce technicky náročných plavidlech.
@@ -989,7 +1105,9 @@
 
       <div class="project">
         <small>Servis a commissioning</small>
+
         <h3>Diagnostika a uvádění zařízení do provozu</h3>
+
         <p>
           Praktická práce s čerpadly, armaturami, řízením a dalšími
           prvky vodohospodářských technologických celků.
@@ -1009,8 +1127,8 @@
     <h2>Jasná cena předem.</h2>
 
     <p class="lead">
-      U pravidelné kontroly platíte za kompletní službu, ne za počet minut,
-      které technik u zařízení stráví.
+      U pravidelné kontroly platíte za kompletní službu,
+      ne za počet minut, které technik u zařízení stráví.
     </p>
 
     <div class="pricing-table">
@@ -1022,27 +1140,32 @@
             Zahrnuje základní kontrolu technologie a běžné drobné seřízení.
           </div>
         </div>
+
         <div class="price-value">1 900 Kč</div>
       </div>
 
       <div class="price-row">
         <div>
           <strong>Vstupní kontrola ČOV</strong>
+
           <div class="price-note">
             Kompletní první prohlídka zařízení a doporučení další péče.
           </div>
         </div>
+
         <div class="price-value">1 900 Kč</div>
       </div>
 
       <div class="price-row">
         <div>
           <strong>Diagnostika a servis závady</strong>
+
           <div class="price-note">
             Při zápachu, špatném čištění, nefunkčním dmychadle,
             čerpadle nebo jiném provozním problému.
           </div>
         </div>
+
         <div class="price-value">1 200 Kč / hod.</div>
       </div>
 
@@ -1050,6 +1173,7 @@
         <div>
           <strong>Minimální cena servisního výjezdu</strong>
         </div>
+
         <div class="price-value">1 500 Kč</div>
       </div>
 
@@ -1060,7 +1184,10 @@
       do 15 km – 300 Kč &nbsp; • &nbsp;
       do 30 km – 500 Kč &nbsp; • &nbsp;
       do 45 km – 700 Kč &nbsp; • &nbsp;
-      do 60 km – 900 Kč<br>
+      do 60 km – 900 Kč
+
+      <br>
+
       <span class="price-note">
         Nad 60 km individuálně. Materiál a náhradní díly se účtují zvlášť.
       </span>
@@ -1073,45 +1200,100 @@
   <div class="container">
 
     <div class="english-box">
+
       <div class="section-kicker">English-speaking service</div>
 
       <h3>Domestic wastewater treatment plant service in English.</h3>
 
       <p>
-        We also provide servicing, troubleshooting and regular maintenance
+        We provide troubleshooting, servicing and regular maintenance
         of domestic wastewater treatment plants for English-speaking clients
         living in Prague-West and Central Bohemia.
       </p>
 
       <p>
-        Technical explanation, service visit and follow-up communication
-        can all be handled in English.
+        Initial communication, technical explanation, service visits
+        and follow-up communication can all be handled in English.
       </p>
+
     </div>
 
   </div>
 </section>
 
-<section class="cta" id="kontakt">
+<section class="contact-section" id="kontakt">
   <div class="container">
 
-    <h2>Chcete vědět, jestli vaše ČOV funguje tak, jak má?</h2>
+    <div class="section-kicker" style="color:#D1E5E0;">
+      Kontakt
+    </div>
 
-    <p>
-      Domluvte si vstupní nebo pravidelnou kontrolu.
-      Pokud už ČOV zapáchá, špatně čistí nebo nefunguje,
-      popište nám problém a domluvíme servis.
+    <h2>Potřebujete kontrolu nebo servis ČOV?</h2>
+
+    <p class="contact-intro">
+      Ozvěte se nám. Při prvním kontaktu zjistíme základní informace
+      o zařízení a problému a domluvíme vhodný servisní termín.
     </p>
 
-    <a class="btn btn-primary" href="tel:+420000000000">
-      Zavolat Petrovi
-    </a>
+    <div class="contact-grid">
 
-    <br><br>
+      <div class="contact-card">
 
-    <strong>Praha-západ a okolí</strong><br>
-    tel. +420 730 175 315<br>
-    e-mail: info@covbezstarosti.cz
+        <span class="role" style="color:#D1E5E0;">
+          Objednávky a servisní koordinace
+        </span>
+
+        <h3>Pavla [PŘÍJMENÍ]</h3>
+
+        <p>
+          Pro objednání kontroly nebo servisního výjezdu
+          volejte nebo napište.
+        </p>
+
+        <div class="contact-label">Telefon</div>
+        <a class="contact-value" href="tel:+420000000000">
+          +420 XXX XXX XXX
+        </a>
+
+        <div class="contact-label">E-mail</div>
+        <a class="contact-value" href="mailto:info@covbezstarosti.cz">
+          info@covbezstarosti.cz
+        </a>
+
+        <div class="contact-label">Oblast</div>
+        <span class="contact-value">
+          Praha-západ a okolí
+        </span>
+
+      </div>
+
+      <div class="contact-card contact-tech">
+
+        <span class="role" style="color:#D1E5E0;">
+          Jak probíhá první kontakt
+        </span>
+
+        <h3>Nejdřív zjistíme, co potřebujete.</h3>
+
+        <p>
+          Připravte si pokud možno výrobce a typ ČOV,
+          stručný popis problému a případně fotografie zařízení.
+        </p>
+
+        <p>
+          Podle těchto informací domluvíme servisní návštěvu
+          a předáme vše potřebné technikovi.
+        </p>
+
+        <div class="contact-note">
+          <strong>Technickou diagnostiku provádíme při servisní návštěvě.</strong>
+          Po telefonu řešíme základní informace potřebné k objednání
+          a přípravě výjezdu.
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
 </section>
