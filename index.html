@@ -10,18 +10,19 @@
 
   <style>
     :root {
-      --bg: #f3f5f4;
-      --paper: #ffffff;
-      --dark: #172329;
-      --dark-2: #203138;
-      --steel: #52656d;
-      --line: #d8dfdc;
-      --accent: #4d756c;
-      --accent-dark: #35574f;
-      --soft: #e7ece9;
-      --text: #1f292d;
-      --muted: #66747a;
-      --white: #ffffff;
+      --bg: #F4F7F8;
+      --paper: #FFFFFF;
+      --dark: #1E343C;
+      --dark-2: #29434C;
+      --steel: #5B7078;
+      --line: #D5E0E2;
+      --accent: #4F8A83;
+      --accent-dark: #376B65;
+      --soft: #E5F0EE;
+      --text: #203239;
+      --muted: #667A81;
+      --white: #FFFFFF;
+      --shadow: 0 10px 30px rgba(30, 52, 60, 0.06);
     }
 
     * {
@@ -56,7 +57,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(243, 245, 244, 0.96);
+      background: rgba(244, 247, 248, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
@@ -78,13 +79,14 @@
     }
 
     .brand-mark {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border: 2px solid var(--dark);
       border-radius: 50%;
       display: grid;
       place-items: center;
       position: relative;
+      background: var(--paper);
     }
 
     .brand-mark::before,
@@ -131,16 +133,17 @@
 
     .hero {
       background:
-        linear-gradient(rgba(23,35,41,0.96), rgba(23,35,41,0.94)),
-        repeating-linear-gradient(
-          90deg,
-          transparent,
-          transparent 79px,
-          rgba(255,255,255,0.03) 80px
-        );
-      color: white;
+        linear-gradient(rgba(244,247,248,0.90), rgba(244,247,248,0.96)),
+        linear-gradient(#DCE6E7 1px, transparent 1px),
+        linear-gradient(90deg, #DCE6E7 1px, transparent 1px);
+      background-size:
+        auto,
+        40px 40px,
+        40px 40px;
+      color: var(--dark);
       padding: 94px 0 78px;
       overflow: hidden;
+      border-bottom: 1px solid var(--line);
     }
 
     .hero-grid {
@@ -154,9 +157,9 @@
       text-transform: uppercase;
       letter-spacing: 0.14em;
       font-size: 0.8rem;
-      color: #b9c9c4;
+      color: var(--accent-dark);
       margin-bottom: 18px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     h1 {
@@ -170,7 +173,7 @@
     .hero-sub {
       margin-top: 26px;
       font-size: clamp(1.25rem, 2vw, 1.65rem);
-      color: #dce5e2;
+      color: var(--steel);
       max-width: 760px;
       line-height: 1.35;
     }
@@ -188,27 +191,35 @@
       border-radius: 6px;
       font-weight: 700;
       border: 1px solid transparent;
+      transition: 0.2s ease;
     }
 
     .btn-primary {
-      background: var(--accent);
+      background: var(--accent-dark);
       color: white;
     }
 
     .btn-primary:hover {
-      background: #5f887f;
+      background: #2f5e58;
+      transform: translateY(-1px);
     }
 
     .btn-outline {
-      border-color: rgba(255,255,255,0.35);
-      color: white;
+      border-color: #AABABC;
+      color: var(--dark);
+      background: rgba(255,255,255,0.65);
+    }
+
+    .btn-outline:hover {
+      background: white;
     }
 
     .hero-panel {
-      border: 1px solid rgba(255,255,255,0.15);
-      padding: 26px;
-      background: rgba(255,255,255,0.04);
-      border-radius: 10px;
+      border: 1px solid #CBD8D9;
+      padding: 28px;
+      background: rgba(255,255,255,0.76);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
     }
 
     .hero-panel strong {
@@ -219,7 +230,7 @@
 
     .hero-panel p {
       margin: 0;
-      color: #cbd6d2;
+      color: var(--steel);
     }
 
     .metric-grid {
@@ -230,24 +241,24 @@
     }
 
     .metric {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: #FFFFFF;
+      border: 1px solid #D5E0E2;
       padding: 18px;
-      border-radius: 7px;
+      border-radius: 8px;
     }
 
     .metric span {
       display: block;
-      font-size: 1.8rem;
+      font-size: 1.75rem;
       font-weight: 800;
-      color: white;
+      color: var(--dark);
     }
 
     .metric small {
-      color: #b8c4c0;
+      color: var(--muted);
     }
 
-    /* SECTIONS */
+    /* GENERAL SECTIONS */
 
     section {
       padding: 86px 0;
@@ -267,6 +278,7 @@
       line-height: 1.08;
       letter-spacing: -0.03em;
       margin: 0 0 18px;
+      color: var(--dark);
     }
 
     .lead {
@@ -288,13 +300,14 @@
       background: var(--paper);
       border: 1px solid var(--line);
       padding: 30px;
-      border-radius: 10px;
+      border-radius: 12px;
       min-height: 310px;
       position: relative;
+      box-shadow: var(--shadow);
     }
 
     .service-number {
-      color: var(--accent);
+      color: var(--accent-dark);
       font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.1em;
@@ -304,6 +317,7 @@
     .service-card h3 {
       margin: 0 0 13px;
       font-size: 1.45rem;
+      color: var(--dark);
     }
 
     .service-card p {
@@ -359,32 +373,36 @@
       font-size: 0.8rem;
     }
 
-    /* MODEL */
+    /* CARE MODEL */
 
     .model {
-      background: var(--dark);
-      color: white;
+      background: #EAF1F1;
+      color: var(--text);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .model .lead {
-      color: #bac6c2;
+      color: var(--muted);
     }
 
     .model-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 2px;
-      background: rgba(255,255,255,0.1);
+      gap: 12px;
     }
 
     .model-step {
-      background: var(--dark-2);
+      background: var(--paper);
       padding: 28px;
       min-height: 220px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
     }
 
     .model-step span {
-      color: #91aaa2;
+      color: var(--accent-dark);
       font-size: 0.8rem;
       font-weight: 800;
     }
@@ -392,11 +410,12 @@
     .model-step h3 {
       margin: 24px 0 10px;
       font-size: 1.2rem;
+      color: var(--dark);
     }
 
     .model-step p {
       margin: 0;
-      color: #c8d1ce;
+      color: var(--muted);
     }
 
     /* EXPERIENCE */
@@ -411,8 +430,9 @@
     .experience-box {
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 34px;
+      box-shadow: var(--shadow);
     }
 
     .experience-main {
@@ -423,26 +443,63 @@
       font-size: 5rem;
       font-weight: 900;
       line-height: 1;
-      color: var(--accent);
+      color: var(--accent-dark);
       letter-spacing: -0.06em;
       margin-bottom: 12px;
     }
 
-    .experience-box h3 {
+    .experience-box h3,
+    .experience-main h3 {
       margin-top: 0;
+      color: var(--dark);
     }
 
-    /* PRICE */
+    /* PROJECTS */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .project {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .project small {
+      color: var(--accent-dark);
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+    }
+
+    .project h3 {
+      margin: 16px 0 10px;
+      color: var(--dark);
+    }
+
+    .project p {
+      color: var(--muted);
+    }
+
+    /* PRICING */
 
     .pricing {
-      background: #e9eeec;
+      background: #EEF3F3;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .pricing-table {
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
+      box-shadow: var(--shadow);
     }
 
     .price-row {
@@ -460,12 +517,14 @@
 
     .price-row strong {
       font-size: 1.12rem;
+      color: var(--dark);
     }
 
     .price-value {
       text-align: right;
       font-size: 1.25rem;
       font-weight: 800;
+      color: var(--dark);
     }
 
     .price-note {
@@ -478,8 +537,9 @@
       margin-top: 20px;
       padding: 22px 26px;
       border: 1px solid var(--line);
-      border-radius: 10px;
+      border-radius: 12px;
       background: var(--paper);
+      box-shadow: var(--shadow);
     }
 
     /* ENGLISH */
@@ -498,42 +558,14 @@
     .english-box h3 {
       margin-top: 0;
       font-size: 1.7rem;
-    }
-
-    /* PROJECTS */
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .project {
-      border: 1px solid var(--line);
-      background: var(--paper);
-      padding: 28px;
-      border-radius: 10px;
-    }
-
-    .project small {
-      color: var(--accent-dark);
-      text-transform: uppercase;
-      font-weight: 800;
-      letter-spacing: 0.09em;
-    }
-
-    .project h3 {
-      margin: 16px 0 10px;
-    }
-
-    .project p {
-      color: var(--muted);
+      color: var(--dark);
     }
 
     /* CTA */
 
     .cta {
-      background: var(--accent-dark);
+      background:
+        linear-gradient(135deg, #315F5A 0%, #3F7771 100%);
       color: white;
       text-align: center;
     }
@@ -541,10 +573,11 @@
     .cta h2 {
       max-width: 800px;
       margin: 0 auto 18px;
+      color: white;
     }
 
     .cta p {
-      color: #d4dedb;
+      color: #DCEAE7;
       max-width: 700px;
       margin: 0 auto 30px;
     }
@@ -557,8 +590,8 @@
     /* FOOTER */
 
     footer {
-      background: #111b1f;
-      color: #b8c5c1;
+      background: #183038;
+      color: #BDCFCA;
       padding: 42px 0;
     }
 
@@ -573,7 +606,7 @@
       color: white;
     }
 
-    /* MOBILE */
+    /* RESPONSIVE */
 
     @media (max-width: 900px) {
       .hero-grid,
@@ -648,7 +681,6 @@
   </div>
 </header>
 
-
 <main>
 
 <section class="hero">
@@ -703,11 +735,11 @@
   </div>
 </section>
 
-
 <section id="sluzby">
   <div class="container">
 
     <div class="section-kicker">Služby</div>
+
     <h2>Nečekejte, až začne ČOV zapáchat nebo přestane čistit.</h2>
 
     <p class="lead">
@@ -754,12 +786,12 @@
   </div>
 </section>
 
-
 <section class="check-section">
   <div class="container check-grid">
 
     <div>
       <div class="section-kicker">Co při kontrole řešíme</div>
+
       <h2>Technologie má fungovat jako celek.</h2>
 
       <p class="lead">
@@ -815,11 +847,11 @@
   </div>
 </section>
 
-
 <section class="model" id="pece">
   <div class="container">
 
     <div class="section-kicker">ČOV bez starostí</div>
+
     <h2>Pravidelný servis místo nahodilých oprav.</h2>
 
     <p class="lead">
@@ -869,11 +901,11 @@
   </div>
 </section>
 
-
 <section id="zkusenosti">
   <div class="container">
 
     <div class="section-kicker">Technické zkušenosti</div>
+
     <h2>15 let práce s technologiemi odpadních vod.</h2>
 
     <p class="lead">
@@ -886,6 +918,7 @@
 
       <div class="experience-main">
         <div class="big-number">15+</div>
+
         <h3>let odborné servisní praxe</h3>
 
         <p>
@@ -921,11 +954,11 @@
   </div>
 </section>
 
-
 <section>
   <div class="container">
 
     <div class="section-kicker">Vybrané zkušenosti z profesní praxe</div>
+
     <h2>Od běžných provozů po mimořádně náročné projekty.</h2>
 
     <p class="lead">
@@ -968,11 +1001,11 @@
   </div>
 </section>
 
-
 <section class="pricing" id="cenik">
   <div class="container">
 
     <div class="section-kicker">Ceník</div>
+
     <h2>Jasná cena předem.</h2>
 
     <p class="lead">
@@ -1028,12 +1061,13 @@
       do 30 km – 500 Kč &nbsp; • &nbsp;
       do 45 km – 700 Kč &nbsp; • &nbsp;
       do 60 km – 900 Kč<br>
-      <span class="price-note">Nad 60 km individuálně. Materiál a náhradní díly se účtují zvlášť.</span>
+      <span class="price-note">
+        Nad 60 km individuálně. Materiál a náhradní díly se účtují zvlášť.
+      </span>
     </div>
 
   </div>
 </section>
-
 
 <section class="english" id="english">
   <div class="container">
@@ -1057,7 +1091,6 @@
 
   </div>
 </section>
-
 
 <section class="cta" id="kontakt">
   <div class="container">
@@ -1084,7 +1117,6 @@
 </section>
 
 </main>
-
 
 <footer>
   <div class="container footer-grid">
