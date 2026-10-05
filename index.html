@@ -125,6 +125,16 @@
       color: var(--accent-dark);
     }
 
+.nav-english {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-english .flag {
+  font-size: 1rem;
+  line-height: 1;
+}
     .nav-cta {
       background: var(--dark);
       color: white;
@@ -763,7 +773,9 @@
       <a href="#pece">Pravidelná péče</a>
       <a href="#zkusenosti">Zkušenosti</a>
       <a href="#cenik">Ceník</a>
-      <a href="#english">English</a>
+      <a href="#english" class="nav-english">
+  <span class="flag">🇬🇧</span> English
+</a>
       <a class="nav-cta" href="#kontakt">Kontakt</a>
     </nav>
   </div>
